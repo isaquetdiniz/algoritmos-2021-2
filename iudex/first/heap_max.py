@@ -1,0 +1,49 @@
+class Max_Heap:
+    def __init__(self, vector, size_total):
+        self.size_total = size_total
+        self.size = 0
+        self.vector = [0] * (size_total + 1)
+
+        for i in range(1, size_total + 1):
+            self.vector[i] = vector[i - 1]
+            self.size += 1
+
+        for i in range(self.size_total // 2, 0, -1):
+            self.max_heapify(i)
+
+
+    def parent(self, i):
+        return i // 2
+
+    def left(self, i):
+        return 2 * i
+
+    def right(self, i):
+        return (2*i) + 1
+
+    def change(self, i, j):
+        aux = self.vector[i]
+        self.vector[i] = self.vector[j]
+        self.vector[j] = aux
+
+    def max_heapify(self, i):
+        l = self.left(i)
+        r = self.right(i)
+
+        if l <= self.size and self.vector[l] > self.vector[i]:
+            maior = l
+        else:
+            maior = i
+
+        if r <= self.size and self.vector[r] > self.vector[maior]:
+            maior = r
+
+        if maior != i:
+            self.change(i, maior)
+            self.max_heapify(maior)
+
+vector = [1,2,3,4,5,6,7,8,9]
+max_heap = Max_Heap(vector, 9)
+print(max_heap.vector)
+print(max_heap.size_total)
+print(max_heap.size)
