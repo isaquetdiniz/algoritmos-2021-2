@@ -1,0 +1,17 @@
+O programa 0 foi agendado com sucesso!
+O programa 1 foi agendado com sucesso!
+O programa 0 executou por 9305 segundos.
+O programa 0 terminou.
+O programa 1 executou por 7481 segundos.
+O programa 1 terminou.
+A linha possui 0 programas.
+A linha possui 0 programas.
+O programa 2 foi agendado com sucesso!
+O programa 3 foi agendado com sucesso!
+O programa 4 foi agendado com sucesso!
+O programa 2 executou por 406 segundos.
+O programa 2 terminou.
+O programa 3 executou por 9915 segundos.
+O programa 3 terminou.
+O programa 4 executou por 1106 segundos.
+A linha possui 1 programas.
