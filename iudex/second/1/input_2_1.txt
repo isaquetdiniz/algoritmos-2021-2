@@ -1,0 +1,13 @@
+12
+push 3
+push 2
+getMax
+push 2
+getMin
+push 1
+getMin
+getMax
+push 10
+getMin
+push 15
+getMax

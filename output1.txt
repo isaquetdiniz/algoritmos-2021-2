@@ -1,14 +1,6 @@
-O programa 0 foi agendado com sucesso!
-O programa 1 foi agendado com sucesso!
-O programa 2 foi agendado com sucesso!
-O programa 0 executou por 10 segundos.
-O programa 0 terminou.
-O programa 1 executou por 12 segundos.
-A linha possui 2 programas.
-O programa 3 foi agendado com sucesso!
-O programa 2 executou por 8 segundos.
-O programa 2 terminou.
-O programa 1 executou por 3 segundos.
-O programa 1 terminou.
-O programa 3 executou por 7 segundos.
-A linha possui 1 programas.
+3
+2
+1
+3
+1
+15

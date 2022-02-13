@@ -1,0 +1,21 @@
+12
+push 15
+push 15
+push 100
+push 5
+push -5
+getMax
+getMin
+pop
+getMin
+pop
+getMin
+getMax
+pop
+getMax
+pop
+pop
+pop
+pop
+getMax
+getMin
