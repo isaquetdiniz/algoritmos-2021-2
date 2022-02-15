@@ -1,6 +1,3 @@
-import sys
-
-
 class Item:
     def __init__(self, value, next_item, before):
         self.value = value
@@ -37,6 +34,21 @@ class Stack:
             if(self.min > new_item.value):
                 self.min = new_item.value
 
+    def update_max_and_min(self):
+        self.max = -9999999999
+        self.min = 9999999999
+
+        item = self.start
+
+        while item:
+            if item.value > self.max:
+                self.max = item.value
+
+            if item.value < self.min:
+                self.min = item.value
+
+            item = item.next
+
     def pop(self):
         if(not self.start):
             print('empty stack')
@@ -50,22 +62,10 @@ class Stack:
             self.start = item_to_pop.next
 
             if(item_value == self.max or item_value == self.min):
-                max_value = -9999999999
-                min_value = 9999999999
-
-                while item_to_pop.next:
-                    if(item_to_pop.next.value > max_value):
-                        max_value = item_to_pop.next.value
-
-                    if(item_to_pop.next.value < min_value):
-                        min_value = item_to_pop.next.value
-
-                    item_to_pop.next = item_to_pop.next.next
-
-                self.max = max_value
-                self.min = min_value
+                self.update_max_and_min()
         else:
             self.start = 0
+            self.update_max_and_min()
 
         print(item_value)
 
@@ -87,7 +87,11 @@ class Stack:
 def main():
     stack = Stack()
 
-    for line in sys.stdin:
+    number_commands = int(input())
+
+    for i in range(number_commands):
+        line = input()
+
         if('push' in line):
             [_, number_string] = line.split(' ')
             number = int(number_string)

@@ -1,21 +1,27 @@
 12
-push 15
-push 15
-push 100
 push 5
-push -5
+push 5
+push 5
+push 5
+push 5
+push 5
+push 5
+push 5
+push 5
+push 5
+push 5
+push 5
 getMax
 getMin
 pop
+getMax
+getMin
+push -20
+getMax
 getMin
 pop
+getMax
 getMin
-getMax
-pop
-getMax
-pop
-pop
-pop
-pop
+push 1
 getMax
 getMin
