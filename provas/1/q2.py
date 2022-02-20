@@ -4,20 +4,19 @@ matriz2 = [[1, 1], [1, 1]]
 
 
 def multiplicaMatrizes(matriz1, matriz2):
-    matriz_resultante = len(matriz1) * []
+    matriz_resultante = []
 
     for i in range(len(matriz1)):
-        linha_resultante = len(matriz1) * []
+        linha_resultante = []
 
         for j in range(len(matriz1[i])):
             resultado = matriz1[i][j] * matriz2[i][j]
-            print(i)
-            print(j)
-            linha_resultante[i] = resultado
+
+            linha_resultante.append(resultado)
 
         matriz_resultante.append(linha_resultante)
 
-    print(matriz_resultante)
+    return matriz_resultante
 
 
 def multiplicaMatrizesContadorInstrucoes(matriz1, matriz2):
@@ -40,11 +39,8 @@ def multiplicaMatrizesContadorInstrucoes(matriz1, matriz2):
         matriz_resultante.append(linha_resultante)
         quantidade_instrucoes += 1
 
-    print(matriz_resultante)
-    quantidade_instrucoes += 1
-
-    print(quantidade_instrucoes)
+    return quantidade_instrucoes
 
 
-multiplicaMatrizes(matriz1, matriz2)
-multiplicaMatrizesContadorInstrucoes(matriz1, matriz2)
+print(multiplicaMatrizes(matriz1, matriz2))
+print(multiplicaMatrizesContadorInstrucoes(matriz1, matriz2))
