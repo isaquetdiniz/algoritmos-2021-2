@@ -24,15 +24,17 @@ class Stack:
         return self.total_items == 0
 
     def add_item(self, item):
+        item_in_stack = Item_Stack(item)
+
         if self.is_empty():
-            self.start = item
-            self.end = item
+            self.start = item_in_stack
+            self.end = item_in_stack
             self.total_items += 1
             return
 
-        item.prev = self.end
-        self.end.next = item
-        self.end = item
+        item_in_stack.prev = self.end
+        self.end.next = item_in_stack
+        self.end = item_in_stack
 
         self.total_items += 1
 
@@ -75,18 +77,12 @@ class Stack:
         print(list_string)
 
 
-item_stack1 = Item_Stack(2)
-item_stack2 = Item_Stack(3)
-item_stack3 = Item_Stack(4)
-item_stack4 = Item_Stack(5)
-item_stack5 = Item_Stack(10)
-
 stack = Stack()
 
-stack.add_item(item_stack1)
-stack.add_item(item_stack2)
-stack.add_item(item_stack3)
-stack.add_item(item_stack4)
+stack.add_item(2)
+stack.add_item(3)
+stack.add_item(4)
+stack.add_item(5)
 
 stack.print_all_items()
 
@@ -98,7 +94,7 @@ stack.pop()
 
 stack.print_all_items()
 
-stack.add_item(item_stack5)
+stack.add_item(10)
 
 stack.print_all_items()
 

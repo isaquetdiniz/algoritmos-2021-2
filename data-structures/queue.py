@@ -24,15 +24,17 @@ class Queue:
         return self.total_items == 0
 
     def add_item(self, item):
+        item_in_queue = Item_Queue(item)
+
         if self.is_empty():
-            self.start = item
-            self.end = item
+            self.start = item_in_queue
+            self.end = item_in_queue
             self.total_items += 1
             return
 
-        item.prev = self.end
-        self.end.next = item
-        self.end = item
+        item_in_queue.prev = self.end
+        self.end.next = item_in_queue
+        self.end = item_in_queue
 
         self.total_items += 1
 
@@ -75,18 +77,12 @@ class Queue:
         print(list_string)
 
 
-item_list1 = Item_Queue(2)
-item_list2 = Item_Queue(3)
-item_list3 = Item_Queue(4)
-item_list4 = Item_Queue(5)
-item_list5 = Item_Queue(10)
-
 queue = Queue()
 
-queue.add_item(item_list1)
-queue.add_item(item_list2)
-queue.add_item(item_list3)
-queue.add_item(item_list4)
+queue.add_item(2)
+queue.add_item(3)
+queue.add_item(4)
+queue.add_item(5)
 
 queue.print_all_items()
 
@@ -100,7 +96,7 @@ queue.go()
 
 queue.print_all_items()
 
-queue.add_item(item_list5)
+queue.add_item(10)
 
 queue.print_all_items()
 
