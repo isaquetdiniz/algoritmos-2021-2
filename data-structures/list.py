@@ -24,15 +24,17 @@ class List:
         return self.total_items == 0
 
     def add_item(self, item):
+        item_in_list = Item_List(item)
+
         if self.is_empty():
-            self.start = item
-            self.end = item
+            self.start = item_in_list
+            self.end = item_in_list
             self.total_items += 1
             return
 
-        item.prev = self.end
-        self.end.next = item
-        self.end = item
+        item_in_list.prev = self.end
+        self.end.next = item_in_list
+        self.end = item_in_list
 
         self.total_items += 1
 
@@ -98,18 +100,12 @@ class List:
         print(list_string)
 
 
-item_list1 = Item_List(2)
-item_list2 = Item_List(3)
-item_list3 = Item_List(4)
-item_list4 = Item_List(5)
-item_list5 = Item_List(10)
-
 list = List()
 
-list.add_item(item_list1)
-list.add_item(item_list2)
-list.add_item(item_list3)
-list.add_item(item_list4)
+list.add_item(2)
+list.add_item(3)
+list.add_item(4)
+list.add_item(5)
 
 list.print_all_items()
 
@@ -123,6 +119,6 @@ list.remove_item_by_value(4)
 
 list.print_all_items()
 
-list.add_item(item_list5)
+list.add_item(10)
 
 list.print_all_items()
