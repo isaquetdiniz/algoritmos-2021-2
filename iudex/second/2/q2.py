@@ -20,12 +20,13 @@ def binary_search(size, list, item_to_search):
 
 def main():
     lists = []
-    quantity_numbers = 0
+    quantity_numbers_per_line = []
 
     for line in sys.stdin:
         line_splited = line[:-2].split(" ")
 
         line_numbers = []
+        quantity_numbers = 0
 
         for ch in line_splited:
             number = int(ch)
@@ -34,12 +35,17 @@ def main():
             line_numbers.append(number)
 
         lists.append(line_numbers)
+        quantity_numbers_per_line.append(quantity_numbers)
 
     numbers_exists = ''
     numbers_not_exists = ''
 
-    for num in lists[1]:
-        if binary_search(quantity_numbers, lists[0], num):
+    first_line = lists[0]
+    second_line = lists[1]
+    quantity_numbers_in_first_line = quantity_numbers_per_line[0]
+
+    for num in second_line:
+        if binary_search(quantity_numbers_in_first_line, first_line, num):
             numbers_exists += '{} '.format(str(num))
         else:
             numbers_not_exists += '{} '.format(str(num))
