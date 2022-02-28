@@ -16,9 +16,26 @@ Repositório para guardar estruturas de dados, algoritmos, provas, laboratórios
 
 ## Questões Iudex
 
-- [A maior das listas](https://iudex.io/problem/5bfc3c7c5cd44b0001fdc178/statement)
-> [Resolução](https://github.com/isaquetdiniz/algoritmos-2021-2/tree/main/iudex/second_try/week_0/a_maior_das_listas)
-- [Chaves](https://iudex.io/problem/5b886db33f792000014ace8d/statement)
-- [Escalonando Processos](https://iudex.io/problem/6203eef93f99be0001bce12f/statement)
-- [MStack](https://iudex.io/problem/6204313d3f99be0001bce176/statement)
-- [Validando as Sequencias](https://iudex.io/problem/6216bb193f99be0001bce79a/statement)
+### A maior das Listas
+
+- [Link Iudex](https://iudex.io/problem/5bfc3c7c5cd44b0001fdc178/statement)
+- [Resolução](https://github.com/isaquetdiniz/algoritmos-2021-2/tree/main/iudex/second_try/week_0/a_maior_das_listas)
+
+### Chaves
+
+- [Link Iudex](https://iudex.io/problem/5b886db33f792000014ace8d/statement)
+- [Resolução](https://github.com/isaquetdiniz/algoritmos-2021-2/tree/main/iudex/second_try/week_0/chaves)
+
+### Escalonando Processos
+
+- [Link Iudex](https://iudex.io/problem/6203eef93f99be0001bce12f/statement)
+- [Resolução](https://github.com/isaquetdiniz/algoritmos-2021-2/tree/main/iudex/second_try/week_1/escalonando_processos)
+
+### MStack
+
+- [Link Iudex](https://iudex.io/problem/6204313d3f99be0001bce176/statement)
+- [Resolução](https://github.com/isaquetdiniz/algoritmos-2021-2/tree/main/iudex/second_try/week_1/mstack)
+### Validando as Sequencias
+
+- [Link Iudex](https://iudex.io/problem/6216bb193f99be0001bce79a/statement)
+- [Resolução](https://github.com/isaquetdiniz/algoritmos-2021-2/tree/main/iudex/second_try/week_2/validando_as_sequencias)
