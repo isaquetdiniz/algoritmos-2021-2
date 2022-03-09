@@ -73,6 +73,24 @@ class BinaryTree:
             self.pos_order(no.left)
             print(no.value)
 
+    def smaller_to_biggest(self, no):
+        if no != None:
+            self.smaller_to_biggest(no.left)
+            print(no.value)
+            self.smaller_to_biggest(no.right)
+
+    def height(self, no):
+        if no != None:
+            left_height = 1 + self.height(no.left)
+            right_height = 1 + self.height(no.right)
+
+            if left_height > right_height:
+                return left_height
+
+            return right_height
+
+        return 0
+
     def max_value(self):
         no = self.root
 
@@ -112,3 +130,6 @@ for i in range(1, 11):
 # tree.pre_order(tree.root)
 # tree.in_order(tree.root)
 # tree.pos_order(tree.root)
+# tree.smaller_to_biggest(tree.root)
+
+# print(tree.height(tree.root))
