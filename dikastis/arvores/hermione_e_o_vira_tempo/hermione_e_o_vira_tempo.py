@@ -1,19 +1,12 @@
 class Node:
     def __init__(self, value):
         self._value = value
-        self._father = None
         self._right = None
         self._left = None
         self._balancing_factor = 0
 
     def get_value(self):
         return self._value
-
-    def get_father(self):
-        return self._father
-
-    def set_father(self, father):
-        self._father = father
 
     def get_right(self):
         return self._right
@@ -41,40 +34,44 @@ class AVLBinaryTree:
     def __init__(self) -> None:
         self._root = None
 
-    def add(self, value):
-        root = self._root
+    def add(self, value: int):
         new_node = Node(value)
+        root = self._root
 
         if not root:
             self._root = new_node
             return
 
-        added = False
-        node = root
+        self.util_add(new_node, root)
 
-        while not added:
-            new_value = new_node.get_value()
-            node_value = node.get_value()
+    def util_add(self, new_node: Node, node: Node):
+        if not node:
+            return new_node
 
-            if new_value < node_value:
-                node_left = node.get_left()
+        value = new_node.get_value()
+        actual_value = node.get_value()
 
-                if not node_left:
-                    node.set_left(new_node)
-                    new_node.set_father(node)
-                    added = True
-                else:
-                    node = node_left
-            else:
-                node_right = node.get_right()
+        if value < actual_value:
+            node.set_left(self.util_add(new_node, node.get_left()))
 
-                if not node_right:
-                    node.set_right(new_node)
-                    new_node.set_father(node)
-                    added = True
-                else:
-                    node = node_right
+        if value > actual_value:
+            node.set_right(self.util_add(new_node, node.get_right()))
 
+        return node
+
+    def pre_order(self):
+        node = self._root
+
+        self.util_pre_order(node)
+
+    def util_pre_order(self, node: Node):
+        if not node:
+            return
+
+        print("{0} ".format(node.get_value(), end=""))
+
+        self.util_pre_order(node.get_left())
+        self.util_pre_order(node.get_right())
 
 tree = AVLBinaryTree()
 
@@ -107,5 +104,4 @@ for i in range(total_lines):
     if i == 3:
         total_hours = int(input_string)
 
-print(total_classes)
-print(total_hours)
+print(tree.pre_order())
